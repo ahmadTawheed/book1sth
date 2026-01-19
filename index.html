@@ -400,7 +400,7 @@
                         <span class="new-price">50 جنيه فقط</span>
                     </div>
 
-                    <p>الخصم سينتهي خلال:</p>
+                    <p>الخصم سينتهي بتاريخ 31 يناير 2026:</p>
                     <div class="countdown" id="countdown">
                         <div class="countdown-item"><span id="days">0</span><p>يوم</p></div>
                         <div class="countdown-item"><span id="hours">0</span><p>ساعة</p></div>
@@ -504,23 +504,14 @@
 
     <script>
         // --- Countdown Timer Logic ---
-        const countdownDuration = 10 * 24 * 60 * 60 * 1000; // 10 days in milliseconds
         const countdownEl = document.getElementById('countdown');
         const daysEl = document.getElementById('days');
         const hoursEl = document.getElementById('hours');
         const minutesEl = document.getElementById('minutes');
         const secondsEl = document.getElementById('seconds');
 
-        let endDate;
-
-        // Check if endDate is stored in localStorage
-        if (localStorage.getItem('queroOfferEndDate')) {
-            endDate = new Date(localStorage.getItem('queroOfferEndDate'));
-        } else {
-            // If not, set it to 10 days from now and store it
-            endDate = new Date().getTime() + countdownDuration;
-            localStorage.setItem('queroOfferEndDate', new Date(endDate));
-        }
+        // Set the end date to January 31, 2026
+        const endDate = new Date('2026-01-31T23:59:59').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
@@ -589,4 +580,3 @@
     </script>
 </body>
 </html>
-
